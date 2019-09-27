@@ -16,11 +16,11 @@ struct TaskService: TaskServiceType {
         do {
             let realm = try Realm()
             if realm.objects(TaskItem.self).count == 0 {
-                ["Chapter 5: Filtering operators",
-                 "Chapter 4: Observables and Subjects in practice",
-                 "Chapter 3: Subjects",
-                 "Chapter 2: Observables",
-                 "Chapter 1: Hello, RxSwift"].forEach {
+                ["todo 5",
+                 "todo 4",
+                 "todo 3",
+                 "todo 2",
+                 "todo 1"].forEach {
                     self.createTask(title: $0)
                 }
             }

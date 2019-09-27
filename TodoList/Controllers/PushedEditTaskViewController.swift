@@ -35,6 +35,7 @@ class PushedEditTaskViewController: UIViewController,BindableType {
             .orEmpty
             .bind(to:viewModel.onUpdate.inputs.asObserver())
             .disposed(by: self.rx.disposeBag)
+        
     }
 
 }

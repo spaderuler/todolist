@@ -13,6 +13,7 @@ import NSObject_Rx
 
 class EditTaskViewController: UIViewController ,BindableType {
 
+    @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var okBtn: UIBarButtonItem!
     @IBOutlet weak var cancelBtn: UIBarButtonItem!
     @IBOutlet weak var textView: UITextView!
@@ -33,11 +34,13 @@ class EditTaskViewController: UIViewController ,BindableType {
         textView.text = viewModel.itemTitle
         cancelBtn.rx.action = viewModel.onCancel
         
-        
         okBtn.rx.tap
             .withLatestFrom(textView.rx.text.orEmpty)
             .bind(to: viewModel.onUpdate.inputs)
             .disposed(by: self.rx.disposeBag)
         
+        let userEnabled = textView.rx.text.orEmpty.map { $0.count > 0 }.share()
+        userEnabled.bind(to: okBtn.rx.isEnabled).disposed(by: self.rx.disposeBag)
+        userEnabled.bind(to: errorLabel.rx.isHidden).disposed(by: self.rx.disposeBag)
     }
 }

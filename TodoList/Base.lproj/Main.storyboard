@@ -12,7 +12,6 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TodoList" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MQg-AH-cLK"/>
@@ -24,6 +23,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1132" y="-116"/>
         </scene>
@@ -181,12 +181,23 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="输入不可为空" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4zD-3H-kxc">
+                                <rect key="frame" x="15" y="384" width="74" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="MaL-RH-t2C"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.99607843139999996" green="0.1333333333" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="B1P-bt-Yah" firstAttribute="leading" secondItem="uLH-kb-07l" secondAttribute="leading" constant="15" id="14Y-CI-E5W"/>
                             <constraint firstAttribute="trailing" secondItem="B1P-bt-Yah" secondAttribute="trailing" constant="15" id="Cdx-bS-VGN"/>
+                            <constraint firstItem="4zD-3H-kxc" firstAttribute="leading" secondItem="uLH-kb-07l" secondAttribute="leading" constant="15" id="UdT-Sx-w5p"/>
                             <constraint firstItem="B1P-bt-Yah" firstAttribute="top" secondItem="sZt-X7-4Kk" secondAttribute="bottom" constant="15" id="sfo-NU-Wnl"/>
+                            <constraint firstItem="4zD-3H-kxc" firstAttribute="top" secondItem="B1P-bt-Yah" secondAttribute="bottom" constant="5" id="tFS-6Z-DSi"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="add new" id="ntf-Zx-Tjk">
@@ -195,6 +206,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="cancelBtn" destination="Qte-OC-bAD" id="S5w-Nf-5Tr"/>
+                        <outlet property="errorLabel" destination="4zD-3H-kxc" id="PTh-iI-FHc"/>
                         <outlet property="okBtn" destination="4Wa-mZ-Pl1" id="gvl-LM-7So"/>
                         <outlet property="textView" destination="B1P-bt-Yah" id="ggn-nh-1lb"/>
                     </connections>
